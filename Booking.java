@@ -1,3 +1,5 @@
+package org.example;
+
 public class Booking {
 
     private int bookingId;
