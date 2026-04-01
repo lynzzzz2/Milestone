@@ -2,12 +2,12 @@ package org.example;
 
 public class Booking {
 
-    private int bookingId;
-    private int userId;
-    private int roomId;
-    private String date;
-    private String time;
-    private String status; // add this
+    private final int bookingId;
+    private final int userId;
+    private final int roomId;
+    private final String date;
+    private final String time;
+    private final String status; // add this
 
     public Booking(int bookingId, int userId, int roomId, String date, String time, String status) {
         this.bookingId = bookingId;
