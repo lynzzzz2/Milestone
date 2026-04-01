@@ -28,7 +28,6 @@ public class AuthenticationService {
                     System.out.println("Login successful!");
                     System.out.println("Welcome, " + userName + " (" + role + ")");
                     return rs.getInt("userId");
-                    return -1;
                 } else {
                     System.out.println("Incorrect password.");
                 }
@@ -38,5 +37,6 @@ public class AuthenticationService {
         } catch (SQLException e) {
             System.out.println("Login error: " + e.getMessage());
         }
+        return -1;
     }
 }
