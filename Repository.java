@@ -5,7 +5,6 @@ import java.sql.*;
 public class Repository {
 
     // Path to your SQLite database file
-    // Change this if your project folder is in a different location
     private static final String DB_URL = "jdbc:sqlite:C:/Users/QC SDO/IdeaProjects/M1 Database/MILESTONE 1.db";
     private Connection connection;
 
@@ -30,6 +29,38 @@ public class Repository {
             }
         } catch (SQLException e) {
             System.out.println("Error closing connection: " + e.getMessage());
+        }
+    }
+
+    public void seedRooms() {
+        String check = "SELECT COUNT(*) FROM rooms";
+        try (Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(check)) {
+            if (rs.next() && rs.getInt(1) == 0) {
+
+                // Hot Desks
+                insertRoom("Hot Desk A", "Hot Desk", 1, "available");
+                insertRoom("Hot Desk B", "Hot Desk", 1, "available");
+                insertRoom("Hot Desk C", "Hot Desk", 1, "available");
+
+                // Meeting Rooms
+                insertRoom("Meeting Room 1", "Meeting Room", 6, "available");
+                insertRoom("Meeting Room 2", "Meeting Room", 10, "available");
+                insertRoom("Meeting Room 3", "Meeting Room", 4, "available");
+
+                // Private Offices
+                insertRoom("Private Office 1", "Private Office", 2, "available");
+                insertRoom("Private Office 2", "Private Office", 4, "available");
+                insertRoom("Private Office 3", "Private Office", 6, "available");
+
+                // Event/Training Rooms
+                insertRoom("Training Room A", "Training Room", 20, "available");
+                insertRoom("Event Hall", "Event Hall", 50, "available");
+
+                System.out.println("Sample rooms added.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error seeding rooms: " + e.getMessage());
         }
     }
 
