@@ -6,13 +6,14 @@ import java.util.Scanner;
 public class BookingManager {
 
     private final Scanner scanner = new Scanner(System.in);
-    private final Repository repo = new Repository();
+    private final Repository repo;
 
-    public void bookWorkspace() {
+    public BookingManager(Repository repo) {
+        this.repo = repo;
+    }
+
+    public void bookWorkspace(int userId) {
         System.out.println("\n===== BOOK WORKSPACE =====");
-
-        System.out.print("Enter User ID: ");
-        int userId = scanner.nextInt();
 
         System.out.print("Enter Room ID: ");
         int roomId = scanner.nextInt();
@@ -45,13 +46,14 @@ public class BookingManager {
             boolean hasBookings = false;
             while (rs != null && rs.next()) {
                 hasBookings = true;
-                System.out.println("Booking ID : " + rs.getInt("bookingId"));
-                System.out.println("User ID    : " + rs.getInt("userId"));
-                System.out.println("Room ID    : " + rs.getInt("roomId"));
-                System.out.println("Date       : " + rs.getString("date"));
-                System.out.println("Time       : " + rs.getString("time"));
-                System.out.println("Status     : " + rs.getString("status"));
-                System.out.println("---------------------------");
+                new Booking(
+                        rs.getInt("bookingId"),
+                        rs.getInt("userId"),
+                        rs.getInt("roomId"),
+                        rs.getString("date"),
+                        rs.getString("time"),
+                        rs.getString("status")
+                ).display(); // uses the Booking class now
             }
             if (!hasBookings) System.out.println("No bookings available.");
         } catch (SQLException e) {
