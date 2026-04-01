@@ -2,11 +2,11 @@ package org.example;
 
 public class Room {
 
-    private int roomId;
-    private String roomName;
-    private String roomType;
-    private int capacity;
-    private String availability;
+    private final int roomId;
+    private final String roomName;
+    private final String roomType;
+    private final int capacity;
+    private final String availability;
 
     public Room(int roomId, String roomName, String roomType, int capacity, String availability) {
         this.roomId = roomId;
