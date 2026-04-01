@@ -15,7 +15,7 @@ public class AuthenticationService {
         repo.insertUser(name, email, password, role);
     }
 
-    public void loginUser(String email, String password) {
+    public int loginUser(String email, String password) {
         ResultSet rs = repo.getUserByEmail(email);
 
         try {
@@ -27,6 +27,8 @@ public class AuthenticationService {
                 if (storedPassword.equals(password)) {
                     System.out.println("Login successful!");
                     System.out.println("Welcome, " + userName + " (" + role + ")");
+                    return rs.getInt("userId");
+                    return -1;
                 } else {
                     System.out.println("Incorrect password.");
                 }
