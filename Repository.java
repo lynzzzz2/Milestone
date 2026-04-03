@@ -5,7 +5,7 @@ import java.sql.*;
 public class Repository {
 
     // Path to your SQLite database file
-    private static final String DB_URL = "jdbc:sqlite:C:/Users/QC SDO/IdeaProjects/M1 Database/MILESTONE 1.db";
+    private static final String DB_URL = "jdbc:sqlite:C:/Users/QC SDO/IdeaProjects/Repos/M1.db";
     private Connection connection;
 
     // ─────────────────────────────────────────
