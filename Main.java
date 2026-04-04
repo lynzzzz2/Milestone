@@ -138,9 +138,12 @@ public class Main {
                 case 2 -> displayAllUsers();
                 case 3 -> displayAvailableRooms();
                 case 4 -> {
-                    System.out.print("Room Name: "); String roomName = scanner.nextLine();
-                    System.out.print("Room Type: "); String roomType = scanner.nextLine();
-                    System.out.print("Capacity: "); int capacity = scanner.nextInt(); scanner.nextLine();
+                    System.out.print("Room Name: "); 
+                    String roomName = scanner.nextLine();
+                    System.out.print("Room Type: "); 
+                    String roomType = scanner.nextLine();
+                    System.out.print("Capacity: "); 
+                    int capacity = scanner.nextInt(); scanner.nextLine();
                     repo.insertRoom(roomName, roomType, capacity, "available");
                 }
                 case 5 -> bookingManager.cancelBooking();
