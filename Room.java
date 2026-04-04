@@ -17,11 +17,21 @@ public class Room {
     }
 
     // Getters
-    public int getRoomId() { return roomId; }
-    public String getRoomName() { return roomName; }
-    public String getRoomType() { return roomType; }
-    public int getCapacity() { return capacity; }
-    public String getAvailability() { return availability; }
+    public int getRoomId() {
+        return roomId;
+    }
+    public String getRoomName() {
+        return roomName;
+    }
+    public String getRoomType() {
+        return roomType;
+    }
+    public int getCapacity() {
+        return capacity;
+    }
+    public String getAvailability() {
+        return availability;
+    }
 
     // Optional display (NOT required but useful)
     public void display() {
