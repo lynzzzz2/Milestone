@@ -19,10 +19,10 @@ public class BookingManager {
         int roomId = scanner.nextInt();
         scanner.nextLine(); // clear buffer
 
-        System.out.print("Enter Date (e.g. 2025-04-01): ");
+        System.out.print("Enter Date (e.g. 2026-04-01): ");
         String date = scanner.nextLine();
 
-        System.out.print("Enter Time (e.g. 09:00): ");
+        System.out.print("Enter Time (e.g. 13:00): ");
         String time = scanner.nextLine();
 
         repo.insertBooking(userId, roomId, date, time); // matches your Repository
