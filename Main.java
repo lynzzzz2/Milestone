@@ -63,14 +63,19 @@ public class Main {
 
             switch (choice) {
                 case 1 -> {
-                    System.out.print("Name: "); String name = scanner.nextLine();
-                    System.out.print("Email: "); String email = scanner.nextLine();
-                    System.out.print("Password: "); String password = scanner.nextLine();
+                    System.out.print("Name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Email: ");
+                    String email = scanner.nextLine();
+                    System.out.print("Password: "); 
+                    String password = scanner.nextLine();
                     authService.registerUser(name, email, password, "customer");
                 }
                 case 2 -> {
-                    System.out.print("Email: "); String email = scanner.nextLine();
-                    System.out.print("Password: "); String password = scanner.nextLine();
+                    System.out.print("Email: "); 
+                    String email = scanner.nextLine();
+                    System.out.print("Password: "); 
+                    String password = scanner.nextLine();
                     int result = authService.loginUser(email, password);
                     if (result != -1) {
                         loggedInUserId = result; // save the userId after login
