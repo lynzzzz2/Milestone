@@ -18,12 +18,24 @@ public class Booking {
         this.status = status; // add this
     }
 
-    public int getBookingId() { return bookingId; }
-    public int getUserId() { return userId; }
-    public int getRoomId() { return roomId; }
-    public String getDate() { return date; }
-    public String getTime() { return time; }
-    public String getStatus() { return status; } // add this
+    public int getBookingId() { 
+        return bookingId; 
+    }
+    public int getUserId() { 
+        return userId; 
+    }
+    public int getRoomId() { 
+        return roomId;
+    }
+    public String getDate() { 
+        return date; 
+    }
+    public String getTime() { 
+        return time; 
+    }
+    public String getStatus() { 
+        return status; 
+    } // add this
 
     public void display() {
         System.out.println("Booking ID : " + bookingId);
