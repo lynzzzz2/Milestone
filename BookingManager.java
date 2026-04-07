@@ -33,13 +33,24 @@ public class BookingManager {
         System.out.println("Workspace booked successfully!");
     }
 
-    public void cancelBooking() {
+   public void cancelBooking() {
         System.out.println("\n===== CANCEL BOOKING =====");
 
         System.out.print("Enter Booking ID: ");
         int bookingId = scanner.nextInt();
 
-        repo.cancelBooking(bookingId); // correct method name from Repository
+        int roomId = repo.getRoomIdByBooking(bookingId);
+
+        if (roomId == -1) {
+            System.out.println("Booking not found.");
+            return;
+        }
+
+        repo.cancelBooking(bookingId);
+
+        repo.updateRoomAvailability(roomId, "available");
+
+        System.out.println("Booking cancelled and room is now available.");
     }
 
     public void viewAllBookings() {
