@@ -228,6 +228,24 @@ public class Repository {
         }
     }
 
+    public int getRoomIdByBooking(int bookingId) {
+    String sql = "SELECT roomId FROM bookings WHERE bookingId = ?";
+
+    try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+        pstmt.setInt(1, bookingId);
+        ResultSet rs = pstmt.executeQuery();
+
+        if (rs.next()) {
+            return rs.getInt("roomId");
+        }
+
+    } catch (SQLException e) {
+        System.out.println("Error retrieving roomId: " + e.getMessage());
+    }
+
+    return -1;
+}
+
     public ResultSet getBookingsByUser(int userId) {
         String sql = "SELECT * FROM bookings WHERE userId = ?";
         try {
