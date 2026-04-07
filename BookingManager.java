@@ -25,6 +25,10 @@ public class BookingManager {
         System.out.print("Enter Time (e.g. 13:00): ");
         String time = scanner.nextLine();
 
+        repo.insertBooking(userId, roomId, date, time);
+
+        repo.updateRoomAvailability(roomId, "occupied");
+        
         repo.insertBooking(userId, roomId, date, time); // matches your Repository
         System.out.println("Workspace booked successfully!");
     }
