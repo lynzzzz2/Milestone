@@ -2,44 +2,44 @@ package org.example;
 
 public class Room {
 
-    private final int roomId;
-    private final String roomName;
-    private final String roomType;
-    private final int capacity;
-    private final String availability;
+    private final int ROOM_ID;
+    private final String ROOM_NAME;
+    private final String ROOM_TYPE;
+    private final int CAPACITY;
+    private final String AVAILABILITY;
 
     public Room(int roomId, String roomName, String roomType, int capacity, String availability) {
-        this.roomId = roomId;
-        this.roomName = roomName;
-        this.roomType = roomType;
-        this.capacity = capacity;
-        this.availability = availability;
+        this.ROOM_ID = roomId;
+        this.ROOM_NAME = roomName;
+        this.ROOM_TYPE = roomType;
+        this.CAPACITY = capacity;
+        this.AVAILABILITY = availability;
     }
 
     // Getters
     public int getRoomId() {
-        return roomId;
+        return ROOM_ID;
     }
     public String getRoomName() {
-        return roomName;
+        return ROOM_NAME;
     }
     public String getRoomType() {
-        return roomType;
+        return ROOM_TYPE;
     }
     public int getCapacity() {
-        return capacity;
+        return CAPACITY;
     }
     public String getAvailability() {
-        return availability;
+        return AVAILABILITY;
     }
 
     // Optional display (NOT required but useful)
     public void display() {
-        System.out.println("Room ID    : " + roomId);
-        System.out.println("Room Name  : " + roomName);
-        System.out.println("Type       : " + roomType);
-        System.out.println("Capacity   : " + capacity);
-        System.out.println("Status     : " + availability);
+        System.out.println("Room ID    : " + ROOM_ID);
+        System.out.println("Room Name  : " + ROOM_NAME);
+        System.out.println("Type       : " + ROOM_TYPE);
+        System.out.println("Capacity   : " + CAPACITY);
+        System.out.println("Status     : " + AVAILABILITY);
         System.out.println("---------------------------");
     }
 }
